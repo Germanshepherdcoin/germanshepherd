@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Shepherd Max | 399 Trillion Token</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #f9a826;
+            --text: #e6e6e6;
+            --background: #0f0f1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover img {
+            transform: rotate(360deg);
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1589941013455-ed3f8070e86b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .floating-dogs {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-dog {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.6;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::after {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(249, 168, 38, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .about-text ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .about-text ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--primary);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            border-radius: 0 8px 8px 0;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(249, 168, 38, 0.1),
+                rgba(249, 168, 38, 0)
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card:hover::before {
+            transform: rotate(30deg) translate(20%, 20%);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .card:hover i {
+            transform: scale(1.2);
+        }
+
+        .token-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .detail {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--primary);
+            border-radius: 8px;
+            transition: transform 0.3s;
+            border: 1px solid rgba(249, 168, 38, 0.1);
+        }
+
+        .detail:hover {
+            transform: translateY(-5px);
+            border-color: rgba(249, 168, 38, 0.3);
+        }
+
+        .detail h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-container {
+            background-color: var(--primary);
+            padding: 2rem;
+            border-radius: 8px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent 48%,
+                var(--accent) 49%,
+                var(--accent) 51%,
+                transparent 52%
+            );
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            background-color: var(--secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent);
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(249, 168, 38, 0.2);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 0;
+        }
+
+        .phase {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 2rem;
+        }
+
+        .phase::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--accent);
+            border: 4px solid var(--primary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 0 4px rgba(249, 168, 38, 0.2);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--primary);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--primary);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--primary);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--primary) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .phase-content {
+            padding: 20px;
+            background-color: var(--primary);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .phase:hover .phase-content {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .phase-content h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .phase-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .phase-content ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .phase-content ul li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: -1rem;
+        }
+
+        .community-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            background-color: rgba(249, 168, 38, 0.1);
+            border: 1px solid rgba(249, 168, 38, 0.2);
+        }
+
+        .social-link i {
+            margin-right: 8px;
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+            background-color: rgba(249, 168, 38, 0.2);
+            border-color: var(--accent);
+        }
+
+        .social-link:hover i {
+            transform: scale(1.2);
+        }
+
+        .newsletter {
+            max-width: 500px;
+            width: 100%;
+            background-color: var(--primary);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .newsletter h3 {
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .newsletter-form {
+            display: flex;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+            background-color: var(--secondary);
+            color: var(--text);
+        }
+
+        .newsletter-form button {
+            padding: 0 1.5rem;
+            background-color: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 0 4px 4px 0;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #e6951a;
+        }
+
+        footer {
+            background-color: var(--primary);
+            padding: 3rem 0 1.5rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .brand-info h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .links h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .links ul {
+            list-style: none;
+        }
+
+        .links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .links ul li a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .links ul li a::before {
+            content: '»';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: translateX(-5px);
+        }
+
+        .links ul li a:hover {
+            color: var(--accent);
+        }
+
+        .links ul li a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .legal {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .phase {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .phase::before {
+                left: 60px;
+                border: medium solid var(--primary);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--primary) transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 100px;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="German Shepherd Logo">
+                <div class="logo-text">
+                    <h1>German Shepherd Max</h1>
+                    <p>Max Supply: 399 Trillion</p>
+                </div>
+            </div>
+            <nav>
+                <div class="mobile-menu" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About GSD</a></li>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#tokenomics">Tokenomics</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-dogs" id="floatingDogs"></div>
+        <h1>German Shepherd Max</h1>
+        <h2>Loyalty. Protection. Community.</h2>
+        <p>Max Supply: 399 Trillion Tokens</p>
+        <div class="cta-buttons">
+            <a href="#" class="btn">Buy Now</a>
+            <a href="#" class="btn btn-outline">Join Our Pack</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Noble German Shepherd</h2>
+                <p>Learn about the breed that inspires our token's values</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1583511655826-05700442b31b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="German Shepherd">
+                </div>
+                <div class="about-text">
+                    <p>The German Shepherd is one of the world's most recognizable and respected dog breeds. Known for their:</p>
+                    <ul>
+                        <li><strong>Intelligence:</strong> Ranked as the 3rd smartest dog breed</li>
+                        <li><strong>Loyalty:</strong> Fiercely devoted to their family</li>
+                        <li><strong>Versatility:</strong> Excellent working dogs in police, military, and service roles</li>
+                        <li><strong>Protection:</strong> Natural guardians with strong protective instincts</li>
+                    </ul>
+                    <p>These qualities inspire our project's values and community ethos. Just as German Shepherds protect their pack, we aim to protect our community in the crypto space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="section" id="mission">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Pack's Mission</h2>
+                <p>Discover what drives the German Shepherd Max community</p>
+            </div>
+            <div class="mission-cards">
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Community Protection</h3>
+                    <p>Create a safe, scam-free environment for crypto enthusiasts, just as German Shepherds protect their pack. We implement robust security measures and educate our community.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-coins"></i>
+                    <h3>399 Trillion Supply</h3>
+                    <p>Our max supply represents the global dog population, ensuring wide distribution and accessibility. This large supply promotes inclusivity in our growing community.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-paw"></i>
+                    <h3>Canine Welfare</h3>
+                    <p>A portion of all transactions supports German Shepherd rescues and working dog programs. We're committed to giving back to the breed that inspires us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="section" id="tokenomics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tokenomics</h2>
+                <p>Transparent and community-focused token distribution</p>
+            </div>
+            <div class="token-details">
+                <div class="detail">
+                    <h3>Max Supply</h3>
+                    <p>399,000,000,000,000 GSM</p>
+                </div>
+                <div class="detail">
+                    <h3>Distribution</h3>
+                    <p>90% public sale<br>
+                    5% team (locked)<br>
+                    5% marketing/development</p>
+                </div>
+                <div class="detail">
+                    <h3>Learn More</h3>
+                    <p>For detailed tokenomics including tax structure, please read our whitepaper</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-placeholder">
+                    Token Distribution Pie Chart
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="section" id="roadmap">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pack Journey</h2>
+                <p>Our path to building a strong and lasting community</p>
+            </div>
+            <div class="timeline">
+                <div class="phase left">
+                    <div class="phase-content">
+                        <h3>Q1 2025: Foundation Phase</h3>
+                        <ul>
+                            <li>Token launch on major decentralized exchanges</li>
+                            <li>Initial community building and awareness campaigns</li>
+                            <li>First charity donation to German Shepherd rescues</li>
+                            <li>Smart contract audit completion</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phase right">
+                    <div class="phase-content">
+                        <h3>Q2-Q3 2025: Growth Phase</h3>
+                        <ul>
+                            <li>Listing on centralized exchanges (CEX)</li>
+                            <li>Partnerships with dog shelters and working dog organizations</li>
+                            <li>Launch of German Shepherd Max merchandise store</li>
+                            <li>Initial NFT collection release</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="phase left">
+                    <div class="phase-content">
+                        <h3>Q4 2025: Expansion Phase</h3>
+                        <ul>
+                            <li>Release of exclusive NFT collection featuring German Shepherds</li>
+                            <li>Development of GSM wallet with enhanced security features</li>
+                            <li>Global adoption initiatives and community expansion</li>
+                            <li>Implementation of governance features</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="section" id="community">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join The Pack</h2>
+                <p>German Shepherd Max is more than a token - it's a community of loyal supporters</p>
+            </div>
+            <div class="community-content">
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-telegram"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-discord"></i>
+                        <span>Discord</span>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-reddit"></i>
+                        <span>Reddit</span>
+                    </a>
+                </div>
+                <div class="newsletter">
+                    <h3>Stay Updated</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="brand-info">
+                    <h3>German Shepherd Max</h3>
+                    <p>Max Supply: 399 Trillion</p>
+                    <p>Protecting the crypto community since 2025</p>
+                </div>
+                <div class="links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Audit Report</a></li>
+                        <li><a href="#">Dextools</a></li>
+                        <li><a href="#">CoinMarketCap</a></li>
+                    </ul>
+                </div>
+                <div class="links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">How to Buy</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Charities</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="legal">
+                <p>© 2025 German Shepherd Max. All rights reserved.</p>
+                <p>Not financial advice. Do your own research.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('show');
+        }
+
+        // Create floating dogs animation
+        function createFloatingDogs() {
+            const container = document.getElementById('floatingDogs');
+            const dogCount = 8;
+            
+            for (let i = 0; i < dogCount; i++) {
+                const dog = document.createElement('div');
+                dog.className = 'floating-dog';
+                
+                // Random position and animation duration
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 10 + Math.random() * 10;
+                
+                dog.style.left = `${left}%`;
+                dog.style.animationDelay = `${delay}s`;
+                dog.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(dog);
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const menu = document.getElementById('nav-menu');
+                    menu.classList.remove('show');
+                }
+            });
+        });
+
+        // Simple animation for elements when they come into view
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.section-title, .about-image, .about-text, .card, .detail, .phase-content, .social-link, .newsletter');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial styles for animated elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.section-title, .about-image, .about-text, .card, .detail, .phase-content, .social-link, .newsletter');
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            // Initialize floating dogs animation
+            createFloatingDogs();
+            
+            // Trigger initial animation check
+            animateOnScroll();
+        });
+
+        // Add scroll event listener for animations
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                // Here you would typically send the email to your server
+                alert(`Thank you for subscribing with ${email}! We'll keep you updated.`);
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
